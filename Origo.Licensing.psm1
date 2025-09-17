@@ -982,7 +982,8 @@ function Get-ServicePlan {
     
     try {
         # Load the catalog data
-        $catalogData = Get-Content $InputPath -Raw -Encoding UTF8 | ConvertFrom-Json
+        $catalogWrapper = Get-Content $InputPath -Raw -Encoding UTF8 | ConvertFrom-Json
+        $catalogData = if ($catalogWrapper.Items) { $catalogWrapper.Items } else { $catalogWrapper }
         
         Write-Host "[INFO] Processing $($catalogData.Count) products for service plans..." -ForegroundColor Cyan
         
@@ -990,43 +991,39 @@ function Get-ServicePlan {
         $allServicePlans = @()
         $processedCount = 0
         
-        foreach ($product in $catalogData) {
+        foreach ($item in $catalogData) {
             $processedCount++
             if ($processedCount % 1000 -eq 0) {
-                Write-Progress -Activity "Processing Products" -Status "Processed $processedCount of $($catalogData.Count)" -PercentComplete (($processedCount / $catalogData.Count) * 100)
+                Write-Progress -Activity "Processing Service Plans" -Status "Processed $processedCount of $($catalogData.Count)" -PercentComplete (($processedCount / $catalogData.Count) * 100)
             }
             
-            if ($product.ServicePlans -and $product.ServicePlans.Count -gt 0) {
-                foreach ($servicePlan in $product.ServicePlans) {
-                    # Create service plan object
-                    $servicePlanObj = [PSCustomObject]@{
-                        ServicePlanName = $servicePlan.ServicePlanName
-                        ServicePlanId = $servicePlan.ServicePlanId
-                        ServicePlansIncludedFriendlyNames = $servicePlan.ServicePlansIncludedFriendlyNames
-                        ProductDisplayName = $product.ProductDisplayName
-                        ProductStringIds = $product.StringIds -join ', '
-                        ProductSkuIds = $product.SkuIds -join ', '
-                    }
-                    
-                    # Apply filters if specified
-                    $includeItem = $true
-                    
-                    if ($NameFilter -and $servicePlanObj.ServicePlanName -notlike $NameFilter) {
-                        $includeItem = $false
-                    }
-                    
-                    if ($IdFilter -and $servicePlanObj.ServicePlanId -notlike $IdFilter) {
-                        $includeItem = $false
-                    }
-                    
-                    if ($includeItem) {
-                        $allServicePlans += $servicePlanObj
-                    }
-                }
+            # Each item in the catalog is already a service plan
+            $servicePlanObj = [PSCustomObject]@{
+                ServicePlanName = $item.ServicePlanName
+                ServicePlanId = $item.ServicePlanId
+                ServicePlansIncludedFriendlyNames = $item.ServicePlansIncludedFriendlyNames
+                ProductDisplayName = $item.ProductDisplayName
+                StringId = $item.StringId
+                GUID = $item.GUID
+            }
+            
+            # Apply filters if specified
+            $includeItem = $true
+            
+            if ($NameFilter -and $servicePlanObj.ServicePlanName -notlike $NameFilter) {
+                $includeItem = $false
+            }
+            
+            if ($IdFilter -and $servicePlanObj.ServicePlanId -notlike $IdFilter) {
+                $includeItem = $false
+            }
+            
+            if ($includeItem) {
+                $allServicePlans += $servicePlanObj
             }
         }
         
-        Write-Progress -Activity "Processing Products" -Completed
+        Write-Progress -Activity "Processing Service Plans" -Completed
         
         # Remove duplicates if requested
         if ($UniqueOnly) {
