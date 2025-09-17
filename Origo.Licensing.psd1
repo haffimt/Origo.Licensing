@@ -3,7 +3,7 @@
     RootModule = 'Origo.Licensing.psm1'
     
     # Version number of this module.
-    ModuleVersion = '0.0.3'
+    ModuleVersion = '0.0.5'
     
     # Supported PSEditions
     CompatiblePSEditions = @('Desktop', 'Core')
@@ -95,3 +95,36 @@
     # Default prefix for commands exported from this module. Override the default prefix using Import-Module -Prefix.
     # DefaultCommandPrefix = ''
 }
+# SIG # Begin signature block
+# MIIFqgYJKoZIhvcNAQcCoIIFmzCCBZcCAQExDzANBglghkgBZQMEAgEFADB5Bgor
+# BgEEAYI3AgEEoGswaTA0BgorBgEEAYI3AgEeMCYCAwEAAAQQH8w7YFlLCE63JNLG
+# KX7zUQIBAAIBAAIBAAIBAAIBADAxMA0GCWCGSAFlAwQCAQUABCAMNG8EO2qYAX3R
+# nE4ePCCDxAEEk1XWHXrThH0Ix7cr7aCCAxgwggMUMIIB/KADAgECAhAeHMcshzIp
+# sELzmDMFfp8iMA0GCSqGSIb3DQEBCwUAMCIxIDAeBgNVBAMMF1Bvd2VyU2hlbGwg
+# Q29kZSBTaWduaW5nMB4XDTI1MDkxNzE2MTI1NVoXDTI4MDkxNzE2MjI1NVowIjEg
+# MB4GA1UEAwwXUG93ZXJTaGVsbCBDb2RlIFNpZ25pbmcwggEiMA0GCSqGSIb3DQEB
+# AQUAA4IBDwAwggEKAoIBAQC+PddqokE+InGoIkq47ieQAIa1W00Vcss9Crs3XKH0
+# bWB5NklgAGjWQGsFmEjY+0+Cy1tco/ePfsFv1/4/E9r/Wqy/u/onBXhFDviVg0v5
+# DsR2KcaiFniXjLRFx4Y6BDhFYp/hN45LKxWDencvDycd9KA4xc6e+nvV4uyBCrfz
+# wmm6oRjSh7MkdorQ9lHehkcrbVRh1ESWcBOqoH1Jyj048SG1uzqbw54hAfO7UOxR
+# UNYZLD8NMCeH3G/H/wgOUCAKoja/zErt1R+gpLUFuHyNR7O97jM04pDdlZg7KO5t
+# lsxPwwTjesARZDrz5hj5DllNAqgPLo288T+wuuu4og5NAgMBAAGjRjBEMA4GA1Ud
+# DwEB/wQEAwIHgDATBgNVHSUEDDAKBggrBgEFBQcDAzAdBgNVHQ4EFgQU7sbjskcV
+# LGsQWaAZtwqWAc4C9PswDQYJKoZIhvcNAQELBQADggEBACpKkxpqizfPbOEH6O70
+# SC1WdCEpxJUP5VeyIaV7ayTgIa2P4PFQWLS7v8f4FzJC6tWVGDG6HlddveHNaZdQ
+# jmSllNTrSkfFBs7KlmmWRhos+UhrqMzURXfG7cq3fdyMFbf80DsEsALh98LOcIK2
+# z5kH8CY8a0JzTAcoPwbIKIGzc88j9zcjNLsLD1OdC439vRVY1vo2A5kVKBNVF6n4
+# DfY/oEkOIAEkQ7+9CtrL1Pfno31XM+M8aKGOyDaH6PiUiMnmQ3iOkVCbTMrWyqZp
+# SXnlX6gZdvnlzUBDs8Ca4r5nRB/GRAPWfVhOs4p72olAtQP8RSV9tIa1iJRb5nYw
+# fpsxggHoMIIB5AIBATA2MCIxIDAeBgNVBAMMF1Bvd2VyU2hlbGwgQ29kZSBTaWdu
+# aW5nAhAeHMcshzIpsELzmDMFfp8iMA0GCWCGSAFlAwQCAQUAoIGEMBgGCisGAQQB
+# gjcCAQwxCjAIoAKAAKECgAAwGQYJKoZIhvcNAQkDMQwGCisGAQQBgjcCAQQwHAYK
+# KwYBBAGCNwIBCzEOMAwGCisGAQQBgjcCARUwLwYJKoZIhvcNAQkEMSIEIB9U3yhV
+# 5nFZC0CuTrZ9a/CznB9ASl9+TK1lRjdOht0RMA0GCSqGSIb3DQEBAQUABIIBAHff
+# wKAFaT3KMsagJirZdKScaR3GSJecV6sPLFAlUAeHx7cexwQY2q4yuHXpd5KP9CHz
+# 5rVKfPVI20W+iPCSdFC1r1wijQFvs18I39GR11xcHji0v/5ZvnouYkknrlVDxCQ8
+# jU1LSzjgmbEwk/msBg+9n1e6fXPBycQ/yhCzceMwFkCKa9YAiRWQ5ZqOg78ywn5o
+# ZHS8sZC1q/xMiuf6hp4PblYf4tX37hSZmEfrZiYOtFPtGGlcfpm+CC/kRHfxOrI8
+# DsE7w5uzARIcf3gxj5VdJZCexDODu9qbjyaUsqnQV5fscohpeHBVoNEP0dOpWBYr
+# E3oA/pX3j+4u0wJ/AKw=
+# SIG # End signature block
